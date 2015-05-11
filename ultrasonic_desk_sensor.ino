@@ -151,7 +151,7 @@ long iterationsAwake = 0;
 void setup() {
   Serial.begin(115200); // Open serial monitor at 115200 baud to see ping results.
   
-  //// generate a random name (device ID), here: a hexadecimal value
+  //// generate a random name (device ID), here: a pseudo-hexadecimal value
   char a[22] = {'0','1', '2', '3', '4', '5', '6', '7', '8','9','A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'};
   char devID[2];
   randomSeed(analogRead(11));
