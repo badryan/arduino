@@ -3,6 +3,7 @@ The name for this repo ("arduino") is slightly misleading. It contains the Ardui
 
 Check out localhost:1880/status for output from the sensors.
 
+https://cloud.githubusercontent.com/assets/6317446/7678626/92cf6eda-fd4d-11e4-8980-ae222dfc567b.jpg
 
 Big acknowledgement of Oxford Flood Network, ThingInnovations and Andrew Lesley for great examples.
 
