@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-// ULTRASONIC ("DESK OCCUPANCY") DEVICE FIRMWARE v0.1 RELEASE
+// ULTRASONIC ("DESK OCCUPANCY") DEVICE FIRMWARE v0.11 RELEASE
 //
 // (C) 2015 by Boris Adryan, badryan@gmail.com, for OpenSensors.IO
 //
@@ -187,9 +187,13 @@ void loop() {
   pinMode(SLEEP_PIN, OUTPUT);    // wake the radio
   
   delay(50);                      // wait 50ms after wakeup 
-  unsigned int uS = sonar.ping(); // send ping, get ping time in microseconds (uS).
+  unsigned int uS = sonar.ping(); // send ping, get ping time in microseconds (uS). this is just for pump-priming
+  delay(50);
+  uS = sonar.ping();              // that's our real ping
+  
   int dist = uS / US_ROUNDTRIP_CM;
   LLAP.sendInt("CM", dist);      // send ping distance in cm
+  
   digitalWrite(BLINK_PIN, HIGH); // blink briefly
   delay(100);
   digitalWrite(BLINK_PIN, LOW);
